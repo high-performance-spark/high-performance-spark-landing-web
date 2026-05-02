@@ -50,20 +50,8 @@ description: "The definitive guide to writing high-performance Apache Spark appl
 
       <!-- Book Cover — replace the placeholder below with an <img> once the cover art is available -->
       <div class="book-cover-wrap">
-        <!--
-          When the cover image is ready, replace the placeholder div with:
-          <img src="/assets/images/cover.jpg"
-               alt="High Performance Spark 2nd Edition book cover"
-               class="book-cover" />
-        -->
-        <div class="book-cover-placeholder" aria-label="High Performance Spark 2nd Edition book cover placeholder">
-          <div class="cover-publisher">O'Reilly</div>
-          <div class="cover-spark-icon">⚡</div>
-          <div class="cover-title">High Performance Spark</div>
-          <div class="cover-subtitle">Best Practices for Scaling and Optimizing Apache Spark</div>
-          <div class="cover-edition">2nd Edition · Spark 4</div>
-          <div class="cover-authors">Holden Karau, Adi Polak &amp; Rachel Warren</div>
-        </div>
+	<img src="/assets/imgs/cover.jpg" alt="High Performance Spark 2e Book Cover"
+	     class="book-cover" />
       </div>
     </div>
   </div>
@@ -125,14 +113,14 @@ description: "The definitive guide to writing high-performance Apache Spark appl
         <ul class="chapter-list" aria-label="Topics covered in the book">
           <li>How Spark's execution model, DAG scheduler, and memory management work</li>
           <li>When to use RDDs, DataFrames, Datasets, and Spark SQL — and why it matters</li>
-          <li>Structured Streaming best practices for low-latency pipelines</li>
           <li>MLlib and machine learning performance patterns</li>
           <li>Efficient joins, shuffles, and data skew mitigation strategies</li>
           <li>Serialization, caching, and memory tuning for large workloads</li>
-          <li>Cluster configuration, resource management, and dynamic allocation</li>
+          <li>Resource management (including accelerators like GPUs), and effective dynamic allocation</li>
           <li>Testing, monitoring, and debugging Spark applications</li>
-          <li>Integration with Delta Lake, Kafka, and modern data lakehouse patterns</li>
+          <li>Integration with modern data lakehouse patterns, with a focus on Iceberg</li>
           <li>Python (PySpark) and Scala performance trade-offs</li>
+	  <li>Structured Streaming best practices for low-latency pipelines (completely new in this edition)</li>
         </ul>
       </div>
     </div>
@@ -174,8 +162,8 @@ description: "The definitive guide to writing high-performance Apache Spark appl
       </div>
       <div class="topic-card" role="listitem">
         <div class="topic-icon" aria-hidden="true">⚙️</div>
-        <div class="topic-title">Cluster Tuning</div>
-        <p class="topic-desc">Configure executors, memory fractions, dynamic allocation, garbage collection, and shuffle service for optimal cluster utilization.</p>
+        <div class="topic-title">Testing</div>
+        <p class="topic-desc">The least performant Spark job is one which fails at runtime and needs to be re-run again. You'll learn how to take your pile of sometimes working jobs sleep through the night.</p>
       </div>
     </div>
   </div>
@@ -194,9 +182,9 @@ description: "The definitive guide to writing high-performance Apache Spark appl
           <p>
             Holden is a transgender Canadian software engineer and prolific open-source contributor.
             She is an <strong>Apache Spark PMC member and committer</strong>, co-author of
-            <em>Learning Spark</em>, and creator of
+            <em>Learning Spark</em> (1e), and creator of
             <a href="https://github.com/holdenk/spark-testing-base" target="_blank" rel="noopener noreferrer">spark-testing-base</a>
-            (1.6k+ stars). She has worked on big data infrastructure at Google, IBM, and other companies.
+            (1.6k+ stars), co-founder of <a href="https://www.fighthealthinsurance.com">fight health insurance, a generative AI tool to appeal health insurance denials</a>. She has worked on big data infrastructure at Google, Apple, Amazon, Netflix, IBM, and other companies.
           </p>
           <div class="author-links">
             <a href="https://github.com/holdenk" class="author-link" target="_blank" rel="noopener noreferrer" aria-label="Holden Karau on GitHub">
@@ -217,14 +205,14 @@ description: "The definitive guide to writing high-performance Apache Spark appl
           <h3>Adi Polak</h3>
           <p>
             Adi is a software engineer and developer advocate with deep expertise in distributed
-            systems and Apache Spark. She is an active contributor to the Spark ecosystem and
+            systems and Apache Spark at Confluent. She is an active contributor to the Spark ecosystem and
             speaks internationally on big data, cloud-native engineering, and developer productivity.
           </p>
           <div class="author-links">
             <a href="https://github.com/AdiPolak" class="author-link" target="_blank" rel="noopener noreferrer" aria-label="Adi Polak on GitHub">
               ⌥ GitHub
             </a>
-            <a href="https://www.linkedin.com/in/adipolak" class="author-link" target="_blank" rel="noopener noreferrer" aria-label="Adi Polak on LinkedIn">
+            <a href="https://www.linkedin.com/in/polak-adi/" class="author-link" target="_blank" rel="noopener noreferrer" aria-label="Adi Polak on LinkedIn">
               in LinkedIn
             </a>
           </div>
@@ -235,15 +223,14 @@ description: "The definitive guide to writing high-performance Apache Spark appl
         <div class="author-info">
           <h3>Rachel Warren</h3>
           <p>
-            Rachel is a software engineer focused on big data infrastructure and distributed systems.
-            She has contributed to Apache Spark and other open-source projects and has extensive
-            experience building production data pipelines at scale.
-          </p>
+Rachel is a PhD student at the Donald Bren School of Information and Computer Sciences at the University of California, Irvine (UCI), where she is advised by Paul Dourish and Melissa Mazmanian. She uses ethnographic and participatory design methods to study predictive systems and data technologies in the public sector.</p>
+<p>
+Prior to her graduate work, Rachel worked as a machine learning engineer, data scientist in industry. She has a Master's of Information Systems from the University of California, Berkeley School of Information and a BA in Computer Science from Wesleyan University. She was a 2024 summer intern with danah boyd in the Social Media Collective at Microsoft Research.</p>
           <div class="author-links">
-            <a href="https://github.com/rw" class="author-link" target="_blank" rel="noopener noreferrer" aria-label="Rachel Warren on GitHub">
+            <a href="https://github.com/rachelwarren" class="author-link" target="_blank" rel="noopener noreferrer" aria-label="Rachel Warren on GitHub">
               ⌥ GitHub
             </a>
-            <a href="https://www.linkedin.com/in/rachel-warren-spark" class="author-link" target="_blank" rel="noopener noreferrer" aria-label="Rachel Warren on LinkedIn">
+            <a href="https://www.linkedin.com/in/rachelbwarren/" class="author-link" target="_blank" rel="noopener noreferrer" aria-label="Rachel Warren on LinkedIn">
               in LinkedIn
             </a>
           </div>
@@ -306,6 +293,60 @@ description: "The definitive guide to writing high-performance Apache Spark appl
           <span class="repo-github-link" aria-hidden="true">View on GitHub →</span>
         </div>
       </a>
+      <a href="https://github.com/holdenk/spark-upgrade"
+         class="repo-card"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Spark Upgrade repository on GitHub"
+         role="listitem">
+        <div class="repo-header">
+          <span class="repo-name">spark-upgrade</span>
+          <span class="repo-stars" aria-label="30 plus stars">⭐ 30+</span>
+        </div>
+        <p class="repo-desc">
+	  Tooling to automate upgrading to new versions of Spark, along with use of the write-audit-publish (WAP) pattern to validate correctness. Done in Python, Scala, and SQL.
+        </p>
+        <div class="repo-meta">
+          <span class="repo-lang" aria-label="Primary language: Python">Python</span>
+          <span class="repo-github-link" aria-hidden="true">View on GitHub →</span>
+        </div>
+      </a>
+      <a href="https://github.com/holdenk/spark-misc-utils"
+         class="repo-card"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Misc Utils for Spark"
+         role="listitem">
+        <div class="repo-header">
+          <span class="repo-name">spark-misc-utils</span>
+          <span class="repo-stars" aria-label="0 plus stars">⭐ 0+ :p</span>
+        </div>
+        <p class="repo-desc">
+	  Random misc utils for those fidely bits not in Spark core.
+        </p>
+        <div class="repo-meta">
+          <span class="repo-lang" aria-label="Primary language: Scala">Scala</span>
+          <span class="repo-github-link" aria-hidden="true">View on GitHub →</span>
+        </div>
+      </a>
+      <a href="https://github.com/fighthealthinsurance/healthinsurance-llm"
+         class="repo-card"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="LLM Data pipeline"
+         role="listitem">
+        <div class="repo-header">
+          <span class="repo-name">FHI health insurance llm</span>
+          <span class="repo-stars" aria-label="0 plus stars">⭐ 0+ :p</span>
+        </div>
+        <p class="repo-desc">
+	  Uses Spark to build the training data for fine tuning of Fight Health Insurnace, a tool for appealing insurance denials.
+        </p>
+        <div class="repo-meta">
+          <span class="repo-lang" aria-label="Primary language: Python">Python</span>
+          <span class="repo-github-link" aria-hidden="true">View on GitHub →</span>
+        </div>
+      </a>
       <a href="https://github.com/high-performance-spark/robin-sparkles"
          class="repo-card"
          target="_blank"
@@ -314,7 +355,7 @@ description: "The definitive guide to writing high-performance Apache Spark appl
          role="listitem">
         <div class="repo-header">
           <span class="repo-name">robin-sparkles</span>
-          <span class="repo-stars" aria-label="12 plus stars">⭐ 12+</span>
+          <span class="repo-stars" aria-label="10 plus stars">⭐ 10+</span>
         </div>
         <p class="repo-desc">
           A proof-of-concept auto-tuner for Apache Spark that automatically discovers
@@ -381,7 +422,7 @@ description: "The definitive guide to writing high-performance Apache Spark appl
     <p class="section-desc">
       Pre-order <strong>High Performance Spark, 2nd Edition</strong> — now updated for Spark 4 —
       the definitive guide to writing fast, production-ready Apache Spark applications,
-      by Holden Karau, Adi Polak &amp; Rachel Warren.
+      by Holden Karau, Adi Polak &amp; Rachel Warren. Slay the the OOM dragon 🐉 in your cluster once and for all (or you know at least for several months).
     </p>
     <div class="cta-buttons">
       <a href="https://amzn.to/429H5IK"
