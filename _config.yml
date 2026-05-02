@@ -1,0 +1,63 @@
+title: High Performance Spark
+description: >-
+  Best Practices for Scaling and Optimizing Apache Spark — by Holden Karau & Rachel Warren.
+  The definitive guide to writing efficient, production-ready Spark applications.
+baseurl: ""
+url: "https://high-performance-spark.github.io"
+
+# Build settings
+theme: null
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Authors
+authors:
+  - name: Holden Karau
+    bio: >-
+      Holden Karau is a transgender Canadian, and is an active open source contributor.
+      She is a Spark committer and PMC member, co-author of Learning Spark, and a
+      developer advocate at Google.
+    github: holdenk
+    twitter: holdenkarau
+  - name: Rachel Warren
+    bio: >-
+      Rachel Warren is a software engineer at Salesforce where she works on big
+      data infrastructure. She has contributed to Apache Spark and other open
+      source projects.
+    github: rw
+
+# Example repos
+example_repos:
+  - name: high-performance-spark-examples
+    url: https://github.com/high-performance-spark/high-performance-spark-examples
+    description: >-
+      Complete working code examples from the book — Scala, Python, and Java.
+      Covers RDDs, DataFrames, Datasets, Spark SQL, MLlib, Streaming, and more.
+    language: Scala / Python / Java
+    stars: "530+"
+  - name: robin-sparkles
+    url: https://github.com/high-performance-spark/robin-sparkles
+    description: >-
+      A proof-of-concept auto-tuner for Apache Spark, automatically finding
+      good Spark configuration parameters for your workload.
+    language: Scala
+    stars: "12+"
+
+# Purchase links
+purchase_links:
+  - store: Amazon
+    url: https://amzn.to/429H5IK
+    icon: amazon
+  - store: O'Reilly
+    url: https://www.oreilly.com/library/view/high-performance-spark/9781098145705/
+    icon: oreilly
+
+plugins:
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor/
