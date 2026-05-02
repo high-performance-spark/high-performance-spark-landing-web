@@ -3,7 +3,7 @@ description: >-
   Best Practices for Scaling and Optimizing Apache Spark — by Holden Karau, Adi Polak & Rachel Warren.
   Updated for Spark 4. The definitive guide to writing efficient, production-ready Spark applications.
 baseurl: ""
-url: "https://high-performance-spark.github.io"
+url: ""
 
 # Build settings
 theme: null
