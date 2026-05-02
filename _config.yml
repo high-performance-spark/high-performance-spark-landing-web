@@ -1,7 +1,7 @@
 title: High Performance Spark
 description: >-
-  Best Practices for Scaling and Optimizing Apache Spark — by Holden Karau & Rachel Warren.
-  The definitive guide to writing efficient, production-ready Spark applications.
+  Best Practices for Scaling and Optimizing Apache Spark — by Holden Karau, Adi Polak & Rachel Warren.
+  Updated for Spark 4. The definitive guide to writing efficient, production-ready Spark applications.
 baseurl: ""
 url: "https://high-performance-spark.github.io"
 
@@ -16,16 +16,26 @@ authors:
   - name: Holden Karau
     bio: >-
       Holden Karau is a transgender Canadian, and is an active open source contributor.
-      She is a Spark committer and PMC member, co-author of Learning Spark, and a
-      developer advocate at Google.
+      She is an Apache Spark PMC member and committer, co-author of Learning Spark, and
+      the creator of spark-testing-base (1.6k+ stars). She has worked on big data
+      infrastructure at Google, IBM, and other companies.
     github: holdenk
     twitter: holdenkarau
+    linkedin: holdenkarau
+  - name: Adi Polak
+    bio: >-
+      Adi Polak is a software engineer and developer advocate with deep expertise in
+      distributed systems and Apache Spark. She is an active contributor to the Spark
+      ecosystem and speaks internationally on big data and cloud-native engineering.
+    github: AdiPolak
+    linkedin: adipolak
   - name: Rachel Warren
     bio: >-
-      Rachel Warren is a software engineer at Salesforce where she works on big
-      data infrastructure. She has contributed to Apache Spark and other open
-      source projects.
+      Rachel Warren is a software engineer focused on big data infrastructure and
+      distributed systems. She has contributed to Apache Spark and other open source
+      projects and has extensive experience building production data pipelines.
     github: rw
+    linkedin: rachel-warren-spark
 
 # Example repos
 example_repos:
@@ -36,6 +46,13 @@ example_repos:
       Covers RDDs, DataFrames, Datasets, Spark SQL, MLlib, Streaming, and more.
     language: Scala / Python / Java
     stars: "530+"
+  - name: spark-testing-base
+    url: https://github.com/holdenk/spark-testing-base
+    description: >-
+      Holden's popular testing library for Apache Spark with over 1.6k stars.
+      Provides base classes and utilities for writing reliable, fast Spark unit tests.
+    language: Scala / Python / Java
+    stars: "1.6k+"
   - name: robin-sparkles
     url: https://github.com/high-performance-spark/robin-sparkles
     description: >-
