@@ -3,7 +3,7 @@ description: >-
   Best Practices for Scaling and Optimizing Apache Spark — by Holden Karau, Adi Polak & Rachel Warren.
   Updated for Spark 4. The definitive guide to writing efficient, production-ready Spark applications.
 baseurl: ""
-url: ""
+url: "https://highperformancespark.com"
 
 # Build settings
 theme: null
@@ -15,60 +15,134 @@ permalink: pretty
 authors:
   - name: Holden Karau
     bio: >-
-      Holden Karau is a transgender Canadian, and is an active open source contributor.
-      She is an Apache Spark PMC member and committer, co-author of Learning Spark, and
-      the creator of spark-testing-base (1.6k+ stars). She has worked on big data
-      infrastructure at Google, IBM, and other companies.
+      Holden is a transgender Canadian software engineer and prolific open-source contributor.
+      She is an <strong>Apache Spark PMC member and committer</strong>, co-author of
+      <em>Learning Spark</em> (1e), and creator of
+      <a href="https://github.com/holdenk/spark-testing-base" target="_blank" rel="noopener noreferrer">spark-testing-base</a>
+      (1.6k+ stars), co-founder of
+      <a href="https://www.fighthealthinsurance.com" target="_blank" rel="noopener noreferrer">fight health insurance, a generative AI tool to appeal health insurance denials</a>.
+      She has worked on big data infrastructure at Google, Apple, Amazon, Netflix, IBM, and other companies.
     github: holdenk
     twitter: holdenkarau
     linkedin: holdenkarau
   - name: Adi Polak
     bio: >-
-      Adi Polak is a software engineer and developer advocate with deep expertise in
-      distributed systems and Apache Spark. She is an active contributor to the Spark
-      ecosystem and speaks internationally on big data and cloud-native engineering.
+      Adi is a software engineer and developer advocate with deep expertise in distributed
+      systems and Apache Spark at Confluent. She is an active contributor to the Spark ecosystem and
+      speaks internationally on big data, cloud-native engineering, and developer productivity.
     github: AdiPolak
-    linkedin: adipolak
+    linkedin: polak-adi
   - name: Rachel Warren
     bio: >-
-      Rachel Warren is a software engineer focused on big data infrastructure and
-      distributed systems. She has contributed to Apache Spark and other open source
-      projects and has extensive experience building production data pipelines.
-    github: rw
-    linkedin: rachel-warren-spark
+      Rachel is a PhD student at the Donald Bren School of Information and Computer Sciences at
+      the University of California, Irvine (UCI), where she is advised by Paul Dourish and Melissa
+      Mazmanian. She uses ethnographic and participatory design methods to study predictive systems
+      and data technologies in the public sector.
+    bio2: >-
+      Prior to her graduate work, Rachel worked as a machine learning engineer and data scientist in
+      industry. She has a Master's of Information Systems from the University of California, Berkeley
+      School of Information and a BA in Computer Science from Wesleyan University. She was a 2024
+      summer intern with danah boyd in the Social Media Collective at Microsoft Research.
+    github: rachelwarren
+    linkedin: rachelbwarren
 
 # Example repos
 example_repos:
   - name: high-performance-spark-examples
     url: https://github.com/high-performance-spark/high-performance-spark-examples
     description: >-
-      Complete working code examples from the book — Scala, Python, and Java.
-      Covers RDDs, DataFrames, Datasets, Spark SQL, MLlib, Streaming, and more.
+      Complete working code examples from the book covering RDDs, DataFrames, Datasets,
+      Spark SQL, Structured Streaming, MLlib, and more. Includes Scala, Python, and Java
+      implementations with benchmark utilities.
     language: Scala / Python / Java
     stars: "530+"
   - name: spark-testing-base
     url: https://github.com/holdenk/spark-testing-base
     description: >-
-      Holden's popular testing library for Apache Spark with over 1.6k stars.
-      Provides base classes and utilities for writing reliable, fast Spark unit tests.
+      Holden's popular testing library for Apache Spark. Provides base classes and
+      utilities for writing reliable, fast Spark unit and integration tests — an
+      essential companion to the testing chapters.
     language: Scala / Python / Java
     stars: "1.6k+"
+  - name: spark-upgrade
+    url: https://github.com/holdenk/spark-upgrade
+    description: >-
+      Tooling to automate upgrading to new versions of Spark, along with use of the
+      write-audit-publish (WAP) pattern to validate correctness. Done in Python, Scala, and SQL.
+    language: Python / Scala / SQL
+    stars: "30+"
+  - name: spark-misc-utils
+    url: https://github.com/holdenk/spark-misc-utils
+    description: Random misc utils for those fiddly bits not in Spark core.
+    language: Scala
+    stars: "0+"
+  - name: FHI Health Insurance LLM
+    url: https://github.com/fighthealthinsurance/healthinsurance-llm
+    description: >-
+      Uses Spark to build the training data for fine-tuning Fight Health Insurance,
+      a tool for appealing insurance denials.
+    language: Python
+    stars: "0+"
   - name: robin-sparkles
     url: https://github.com/high-performance-spark/robin-sparkles
     description: >-
-      A proof-of-concept auto-tuner for Apache Spark, automatically finding
-      good Spark configuration parameters for your workload.
+      A proof-of-concept auto-tuner for Apache Spark that automatically discovers
+      good configuration parameters for your specific workload — a practical companion
+      to the cluster tuning chapters.
     language: Scala
     stars: "12+"
 
-# Purchase links
+# Purchase links (main CTA buttons)
 purchase_links:
   - store: Amazon
     url: https://amzn.to/429H5IK
     icon: amazon
+    label: "Pre-order on Amazon"
+    emoji: "🛒"
+    btn_class: btn-primary
+    aria_label: "Pre-order High Performance Spark on Amazon"
   - store: O'Reilly
     url: https://www.oreilly.com/library/view/high-performance-spark/9781098145705/
     icon: oreilly
+    label: "Read on O'Reilly"
+    emoji: "📖"
+    btn_class: btn-secondary
+    aria_label: "Read on O'Reilly Learning Platform"
+
+# Purchase format links (paperback, Kindle, etc.)
+purchase_formats:
+  - label: "Paperback — Amazon"
+    url: https://amzn.to/429H5IK
+    emoji: "📦"
+    aria_label: "Buy paperback on Amazon"
+  - label: "Kindle Edition"
+    url: https://amzn.to/429H5IK
+    emoji: "📱"
+    aria_label: "Buy Kindle edition on Amazon"
+
+# Stats bar
+stats:
+  - value: "1.6k+"
+    label: "Stars on spark-testing-base"
+  - value: "530+"
+    label: "GitHub Stars on Examples"
+  - value: "Spark 4"
+    label: "Fully Updated Coverage"
+  - value: "O'Reilly"
+    label: "Publisher"
+
+# Cross-reference links
+crossref_links:
+  - label: "Explain it to your kids"
+    url: https://www.distributedcomputing4kids.com
+    emoji: "👶"
+    domain: distributedcomputing4kids.com
+    aria_label: "Distributed Computing for Kids — explain your work to your children"
+  - label: "Explain it to your executive"
+    url: https://www.distributedcomputing4executives.com
+    emoji: "👔"
+    domain: distributedcomputing4executives.com
+    aria_label: "Distributed Computing for Executives — explain your work to your executive"
 
 plugins:
   - jekyll-seo-tag
