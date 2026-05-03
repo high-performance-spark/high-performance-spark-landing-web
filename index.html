@@ -15,7 +15,7 @@ description: "The definitive guide to writing high-performance Apache Spark appl
       <li><a href="#examples">Examples</a></li>
     </ul>
     <div class="nav-cta">
-      <a href="https://amzn.to/429H5IK" class="btn-primary" target="_blank" rel="noopener noreferrer" aria-label="Pre-order High Performance Spark on Amazon">
+      <a href="{{ site.purchase_links[0].url }}" class="btn-primary" target="_blank" rel="noopener noreferrer" aria-label="{{ site.purchase_links[0].aria_label }}">
         Pre-order Now
       </a>
     </div>
@@ -31,13 +31,13 @@ description: "The definitive guide to writing high-performance Apache Spark appl
         <h1 id="hero-heading">High Performance <span>Spark</span></h1>
         <p class="hero-subtitle">Best Practices for Scaling and Optimizing Apache Spark</p>
         <p class="hero-edition">O'Reilly Media &nbsp;·&nbsp; 2nd Edition &nbsp;·&nbsp; Now covering Spark 4</p>
-        <p class="hero-authors">By <strong>Holden Karau</strong>, <strong>Adi Polak</strong> &amp; <strong>Rachel Warren</strong></p>
+        <p class="hero-authors">By {% for author in site.authors %}{% unless forloop.first %}{% if forloop.last %} &amp; {% else %}, {% endif %}{% endunless %}<strong>{{ author.name }}</strong>{% endfor %}</p>
         <div class="hero-actions">
-          <a href="https://amzn.to/429H5IK"
+          <a href="{{ site.purchase_links[0].url }}"
              class="btn-primary"
              target="_blank"
              rel="noopener noreferrer"
-             aria-label="Pre-order High Performance Spark on Amazon">
+             aria-label="{{ site.purchase_links[0].aria_label }}">
             🛒 Pre-order on Amazon
           </a>
           <a href="#about"
@@ -61,22 +61,12 @@ description: "The definitive guide to writing high-performance Apache Spark appl
 <div class="stats-bar" aria-label="Book highlights">
   <div class="container">
     <div class="stats-grid" role="list">
+      {% for stat in site.stats %}
       <div role="listitem">
-        <div class="stat-value">1.6k+</div>
-        <div class="stat-label">Stars on spark-testing-base</div>
+        <div class="stat-value">{{ stat.value }}</div>
+        <div class="stat-label">{{ stat.label }}</div>
       </div>
-      <div role="listitem">
-        <div class="stat-value">530+</div>
-        <div class="stat-label">GitHub Stars on Examples</div>
-      </div>
-      <div role="listitem">
-        <div class="stat-value">Spark 4</div>
-        <div class="stat-label">Fully Updated Coverage</div>
-      </div>
-      <div role="listitem">
-        <div class="stat-value">O'Reilly</div>
-        <div class="stat-label">Publisher</div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </div>
@@ -100,11 +90,11 @@ description: "The definitive guide to writing high-performance Apache Spark appl
           production cluster, <strong>High Performance Spark</strong> provides battle-tested
           patterns and practical advice grounded in real-world experience.
         </p>
-        <a href="https://amzn.to/429H5IK"
+        <a href="{{ site.purchase_links[0].url }}"
            class="btn-primary"
            target="_blank"
            rel="noopener noreferrer"
-           aria-label="Pre-order High Performance Spark on Amazon">
+           aria-label="{{ site.purchase_links[0].aria_label }}">
           Pre-order Now →
         </a>
       </div>
@@ -175,67 +165,33 @@ description: "The definitive guide to writing high-performance Apache Spark appl
     <div class="section-label">About the Authors</div>
     <h2 class="section-title" id="authors-heading">Written by Spark Experts</h2>
     <div class="authors-grid" role="list">
+      {% for author in site.authors %}
       <div class="author-card" role="listitem">
         <div class="author-avatar" aria-hidden="true">👩‍💻</div>
         <div class="author-info">
-          <h3>Holden Karau</h3>
-          <p>
-            Holden is a transgender Canadian software engineer and prolific open-source contributor.
-            She is an <strong>Apache Spark PMC member and committer</strong>, co-author of
-            <em>Learning Spark</em> (1e), and creator of
-            <a href="https://github.com/holdenk/spark-testing-base" target="_blank" rel="noopener noreferrer">spark-testing-base</a>
-            (1.6k+ stars), co-founder of <a href="https://www.fighthealthinsurance.com">fight health insurance, a generative AI tool to appeal health insurance denials</a>. She has worked on big data infrastructure at Google, Apple, Amazon, Netflix, IBM, and other companies.
-          </p>
+          <h3>{{ author.name }}</h3>
+          <p>{{ author.bio }}</p>
+          {% if author.bio2 %}<p>{{ author.bio2 }}</p>{% endif %}
           <div class="author-links">
-            <a href="https://github.com/holdenk" class="author-link" target="_blank" rel="noopener noreferrer" aria-label="Holden Karau on GitHub">
+            {% if author.github %}
+            <a href="https://github.com/{{ author.github }}" class="author-link" target="_blank" rel="noopener noreferrer" aria-label="{{ author.name }} on GitHub">
               ⌥ GitHub
             </a>
-            <a href="https://www.linkedin.com/in/holdenkarau" class="author-link" target="_blank" rel="noopener noreferrer" aria-label="Holden Karau on LinkedIn">
+            {% endif %}
+            {% if author.linkedin %}
+            <a href="https://www.linkedin.com/in/{{ author.linkedin }}" class="author-link" target="_blank" rel="noopener noreferrer" aria-label="{{ author.name }} on LinkedIn">
               in LinkedIn
             </a>
-            <a href="https://twitter.com/holdenkarau" class="author-link" target="_blank" rel="noopener noreferrer" aria-label="Holden Karau on Twitter">
-              𝕏 @holdenkarau
+            {% endif %}
+            {% if author.twitter %}
+            <a href="https://twitter.com/{{ author.twitter }}" class="author-link" target="_blank" rel="noopener noreferrer" aria-label="{{ author.name }} on Twitter">
+              𝕏 @{{ author.twitter }}
             </a>
+            {% endif %}
           </div>
         </div>
       </div>
-      <div class="author-card" role="listitem">
-        <div class="author-avatar" aria-hidden="true">👩‍💻</div>
-        <div class="author-info">
-          <h3>Adi Polak</h3>
-          <p>
-            Adi is a software engineer and developer advocate with deep expertise in distributed
-            systems and Apache Spark at Confluent. She is an active contributor to the Spark ecosystem and
-            speaks internationally on big data, cloud-native engineering, and developer productivity.
-          </p>
-          <div class="author-links">
-            <a href="https://github.com/AdiPolak" class="author-link" target="_blank" rel="noopener noreferrer" aria-label="Adi Polak on GitHub">
-              ⌥ GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/polak-adi/" class="author-link" target="_blank" rel="noopener noreferrer" aria-label="Adi Polak on LinkedIn">
-              in LinkedIn
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="author-card" role="listitem">
-        <div class="author-avatar" aria-hidden="true">👩‍💻</div>
-        <div class="author-info">
-          <h3>Rachel Warren</h3>
-          <p>
-Rachel is a PhD student at the Donald Bren School of Information and Computer Sciences at the University of California, Irvine (UCI), where she is advised by Paul Dourish and Melissa Mazmanian. She uses ethnographic and participatory design methods to study predictive systems and data technologies in the public sector.</p>
-<p>
-Prior to her graduate work, Rachel worked as a machine learning engineer, data scientist in industry. She has a Master's of Information Systems from the University of California, Berkeley School of Information and a BA in Computer Science from Wesleyan University. She was a 2024 summer intern with danah boyd in the Social Media Collective at Microsoft Research.</p>
-          <div class="author-links">
-            <a href="https://github.com/rachelwarren" class="author-link" target="_blank" rel="noopener noreferrer" aria-label="Rachel Warren on GitHub">
-              ⌥ GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/rachelbwarren/" class="author-link" target="_blank" rel="noopener noreferrer" aria-label="Rachel Warren on LinkedIn">
-              in LinkedIn
-            </a>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -253,120 +209,24 @@ Prior to her graduate work, Rachel worked as a machine learning engineer, data s
       measure them yourself.
     </p>
     <div class="repos-grid" role="list">
-      <a href="https://github.com/high-performance-spark/high-performance-spark-examples"
+      {% for repo in site.example_repos %}
+      <a href="{{ repo.url }}"
          class="repo-card"
          target="_blank"
          rel="noopener noreferrer"
-         aria-label="high-performance-spark-examples repository on GitHub"
+         aria-label="{{ repo.name }} repository on GitHub"
          role="listitem">
         <div class="repo-header">
-          <span class="repo-name">high-performance-spark-examples</span>
-          <span class="repo-stars" aria-label="530 plus stars">⭐ 530+</span>
+          <span class="repo-name">{{ repo.name }}</span>
+          <span class="repo-stars" aria-label="{{ repo.stars }} stars">⭐ {{ repo.stars }}</span>
         </div>
-        <p class="repo-desc">
-          Complete working code examples from the book covering RDDs, DataFrames, Datasets,
-          Spark SQL, Structured Streaming, MLlib, and more. Includes Scala, Python, and Java
-          implementations with benchmark utilities.
-        </p>
+        <p class="repo-desc">{{ repo.description }}</p>
         <div class="repo-meta">
-          <span class="repo-lang" aria-label="Primary language: Scala">Scala / Python / Java</span>
+          <span class="repo-lang" aria-label="Primary language: {{ repo.language }}">{{ repo.language }}</span>
           <span class="repo-github-link" aria-hidden="true">View on GitHub →</span>
         </div>
       </a>
-      <a href="https://github.com/holdenk/spark-testing-base"
-         class="repo-card"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="spark-testing-base repository on GitHub"
-         role="listitem">
-        <div class="repo-header">
-          <span class="repo-name">spark-testing-base</span>
-          <span class="repo-stars" aria-label="1.6k plus stars">⭐ 1.6k+</span>
-        </div>
-        <p class="repo-desc">
-          Holden's popular testing library for Apache Spark. Provides base classes and
-          utilities for writing reliable, fast Spark unit and integration tests — an
-          essential companion to the testing chapters.
-        </p>
-        <div class="repo-meta">
-          <span class="repo-lang" aria-label="Primary language: Scala">Scala / Python / Java</span>
-          <span class="repo-github-link" aria-hidden="true">View on GitHub →</span>
-        </div>
-      </a>
-      <a href="https://github.com/holdenk/spark-upgrade"
-         class="repo-card"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="Spark Upgrade repository on GitHub"
-         role="listitem">
-        <div class="repo-header">
-          <span class="repo-name">spark-upgrade</span>
-          <span class="repo-stars" aria-label="30 plus stars">⭐ 30+</span>
-        </div>
-        <p class="repo-desc">
-	  Tooling to automate upgrading to new versions of Spark, along with use of the write-audit-publish (WAP) pattern to validate correctness. Done in Python, Scala, and SQL.
-        </p>
-        <div class="repo-meta">
-          <span class="repo-lang" aria-label="Primary language: Python">Python</span>
-          <span class="repo-github-link" aria-hidden="true">View on GitHub →</span>
-        </div>
-      </a>
-      <a href="https://github.com/holdenk/spark-misc-utils"
-         class="repo-card"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="Misc Utils for Spark"
-         role="listitem">
-        <div class="repo-header">
-          <span class="repo-name">spark-misc-utils</span>
-          <span class="repo-stars" aria-label="0 plus stars">⭐ 0+ :p</span>
-        </div>
-        <p class="repo-desc">
-	  Random misc utils for those fidely bits not in Spark core.
-        </p>
-        <div class="repo-meta">
-          <span class="repo-lang" aria-label="Primary language: Scala">Scala</span>
-          <span class="repo-github-link" aria-hidden="true">View on GitHub →</span>
-        </div>
-      </a>
-      <a href="https://github.com/fighthealthinsurance/healthinsurance-llm"
-         class="repo-card"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="LLM Data pipeline"
-         role="listitem">
-        <div class="repo-header">
-          <span class="repo-name">FHI health insurance llm</span>
-          <span class="repo-stars" aria-label="0 plus stars">⭐ 0+ :p</span>
-        </div>
-        <p class="repo-desc">
-	  Uses Spark to build the training data for fine tuning of Fight Health Insurnace, a tool for appealing insurance denials.
-        </p>
-        <div class="repo-meta">
-          <span class="repo-lang" aria-label="Primary language: Python">Python</span>
-          <span class="repo-github-link" aria-hidden="true">View on GitHub →</span>
-        </div>
-      </a>
-      <a href="https://github.com/high-performance-spark/robin-sparkles"
-         class="repo-card"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="robin-sparkles repository on GitHub"
-         role="listitem">
-        <div class="repo-header">
-          <span class="repo-name">robin-sparkles</span>
-          <span class="repo-stars" aria-label="10 plus stars">⭐ 10+</span>
-        </div>
-        <p class="repo-desc">
-          A proof-of-concept auto-tuner for Apache Spark that automatically discovers
-          good configuration parameters for your specific workload — a practical companion
-          to the cluster tuning chapters.
-        </p>
-        <div class="repo-meta">
-          <span class="repo-lang" aria-label="Primary language: Scala">Scala</span>
-          <span class="repo-github-link" aria-hidden="true">View on GitHub →</span>
-        </div>
-      </a>
+      {% endfor %}
     </div>
     <div style="text-align:center; margin-top: 2rem;">
       <a href="https://github.com/high-performance-spark"
@@ -386,29 +246,20 @@ Prior to her graduate work, Rachel worked as a machine learning engineer, data s
     <div class="crossref-inner">
       <p class="crossref-intro">Need to share the excitement? We've got you covered:</p>
       <div class="crossref-links">
-        <a href="https://www.distributedcomputing4kids.com"
+        {% for link in site.crossref_links %}
+        {% unless forloop.first %}<div class="crossref-divider" aria-hidden="true">·</div>{% endunless %}
+        <a href="{{ link.url }}"
            class="crossref-link"
            target="_blank"
            rel="noopener noreferrer"
-           aria-label="Distributed Computing for Kids — explain your work to your children">
-          <span class="crossref-emoji">👶</span>
+           aria-label="{{ link.aria_label }}">
+          <span class="crossref-emoji">{{ link.emoji }}</span>
           <span class="crossref-text">
-            <strong>Explain it to your kids</strong>
-            <span>distributedcomputing4kids.com</span>
+            <strong>{{ link.label }}</strong>
+            <span>{{ link.domain }}</span>
           </span>
         </a>
-        <div class="crossref-divider" aria-hidden="true">·</div>
-        <a href="https://www.distributedcomputing4executives.com"
-           class="crossref-link"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="Distributed Computing for Executives — explain your work to your executive">
-          <span class="crossref-emoji">👔</span>
-          <span class="crossref-text">
-            <strong>Explain it to your executive</strong>
-            <span>distributedcomputing4executives.com</span>
-          </span>
-        </a>
+        {% endfor %}
       </div>
     </div>
   </div>
@@ -425,36 +276,26 @@ Prior to her graduate work, Rachel worked as a machine learning engineer, data s
       by Holden Karau, Adi Polak &amp; Rachel Warren. Slay the the OOM dragon 🐉 in your cluster once and for all (or you know at least for several months).
     </p>
     <div class="cta-buttons">
-      <a href="https://amzn.to/429H5IK"
-         class="btn-primary"
+      {% for link in site.purchase_links %}
+      <a href="{{ link.url }}"
+         class="{{ link.btn_class }}"
          target="_blank"
          rel="noopener noreferrer"
-         aria-label="Pre-order High Performance Spark on Amazon">
-        🛒 Pre-order on Amazon
+         aria-label="{{ link.aria_label }}">
+        {{ link.emoji }} {{ link.label }}
       </a>
-      <a href="https://www.oreilly.com/library/view/high-performance-spark/9781098145705/"
-         class="btn-secondary"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="Read on O'Reilly Learning Platform">
-        📖 Read on O'Reilly
-      </a>
+      {% endfor %}
     </div>
     <div class="purchase-grid" aria-label="Additional purchase options">
-      <a href="https://amzn.to/429H5IK"
+      {% for format in site.purchase_formats %}
+      <a href="{{ format.url }}"
          class="purchase-link"
          target="_blank"
          rel="noopener noreferrer"
-         aria-label="Buy paperback on Amazon">
-        📦 Paperback — Amazon
+         aria-label="{{ format.aria_label }}">
+        {{ format.emoji }} {{ format.label }}
       </a>
-      <a href="https://amzn.to/429H5IK"
-         class="purchase-link"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="Buy Kindle edition on Amazon">
-        📱 Kindle Edition
-      </a>
+      {% endfor %}
     </div>
   </div>
 </section>
